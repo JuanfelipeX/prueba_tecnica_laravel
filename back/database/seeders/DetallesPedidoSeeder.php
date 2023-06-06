@@ -24,8 +24,6 @@ class DetallesPedidoSeeder extends Seeder
         $new->descripcion = "descripcion";
         $new->iva = "1";
         $new->total = "1.000";
-        // $new->create_id = "1";
-        // $new->update_id = "1";
         $new->save();
     }
 }
