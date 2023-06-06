@@ -12,6 +12,6 @@ class PedidosSeeder extends Seeder
      */
     public function run(): void
     {
-        //
+        
     }
 }
