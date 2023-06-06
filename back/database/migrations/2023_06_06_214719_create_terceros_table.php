@@ -13,6 +13,10 @@ return new class extends Migration
     {
         Schema::create('terceros', function (Blueprint $table) {
             $table->id();
+            $table->integer('nit');
+            $table->string('razon_social');
+            $table->string('tipo');
+            $table->string('activo');
             $table->timestamps();
         });
     }
