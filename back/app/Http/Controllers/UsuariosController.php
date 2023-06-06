@@ -12,7 +12,12 @@ class UsuariosController extends Controller
      */
     public function index()
     {
-        //
+        $data = usuarios::all();
+
+        return response()->json([
+            'type'      => 'Usuarios Consultados Correctamente',
+            'Usuarios'    => $data,
+        ]);
     }
 
     /**
@@ -28,7 +33,14 @@ class UsuariosController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = usuarios::create($request->all());
+        $data->save();
+
+        return response()->json([
+            'message' => "Usuario Creado Correctamente",
+            'type'    => "success",
+            'id'    => $data->id
+        ]);
     }
 
     /**
