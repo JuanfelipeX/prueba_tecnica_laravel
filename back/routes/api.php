@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\DetallesPedidosController;
 use App\Http\Controllers\PedidosController;
+use App\Http\Controllers\TercerosController;
 use App\Http\Controllers\UsuariosController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -27,3 +28,5 @@ Route::resource('usuarios', UsuariosController::class);
 Route::resource('pedidos', PedidosController::class);
 
 Route::resource('detallesPedidos', DetallesPedidosController::class);
+
+Route::resource('terceros', TercerosController::class);

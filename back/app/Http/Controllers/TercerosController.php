@@ -12,7 +12,12 @@ class TercerosController extends Controller
      */
     public function index()
     {
-        //
+        $data = terceros::all();
+
+        return response()->json([
+            'type'      => 'Terceros Consultados Correctamente',
+            'Terceros'    => $data,
+        ]);
     }
 
     /**
@@ -28,7 +33,14 @@ class TercerosController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = terceros::create($request->all());
+        $data->save();
+
+        return response()->json([
+            'message' => "Terceros Creados Correctamente",
+            'type'    => "success",
+            'id'    => $data->id
+        ]);
     }
 
     /**

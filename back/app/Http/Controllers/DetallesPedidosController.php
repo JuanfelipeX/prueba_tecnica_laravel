@@ -16,7 +16,7 @@ class DetallesPedidosController extends Controller
 
         return response()->json([
             'type'      => 'Detalles Pedidos Consultados Correctamente',
-            'Pedidos'    => $data,
+            'Detalles'    => $data,
         ]);
     }
 
