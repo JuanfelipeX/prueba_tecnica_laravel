@@ -13,6 +13,11 @@ return new class extends Migration
     {
         Schema::create('sucursales', function (Blueprint $table) {
             $table->id();
+            $table->integer('nit');
+            $table->string('telefono');
+            $table->string('direccion');
+            $table->string('departamento');
+            $table->string('ciudad');
             $table->timestamps();
         });
     }
