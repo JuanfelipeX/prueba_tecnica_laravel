@@ -12,7 +12,12 @@ class DetallesPedidosController extends Controller
      */
     public function index()
     {
-        //
+        $data = detalles_pedidos::all();
+
+        return response()->json([
+            'type'      => 'Detalles Pedidos Consultados Correctamente',
+            'Pedidos'    => $data,
+        ]);
     }
 
     /**
@@ -28,7 +33,14 @@ class DetallesPedidosController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = detalles_pedidos::create($request->all());
+        $data->save();
+
+        return response()->json([
+            'message' => "'Detalles Pedidos Creados Correctamente",
+            'type'    => "success",
+            'id'    => $data->id
+        ]);
     }
 
     /**

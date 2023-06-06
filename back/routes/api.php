@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DetallesPedidosController;
 use App\Http\Controllers\PedidosController;
 use App\Http\Controllers\UsuariosController;
 use Illuminate\Http\Request;
@@ -24,3 +25,5 @@ Route::resource('usuarios', UsuariosController::class);
 // Route::get('usuarios', [UsuariosController::class, 'index']);
 
 Route::resource('pedidos', PedidosController::class);
+
+Route::resource('detallesPedidos', DetallesPedidosController::class);
