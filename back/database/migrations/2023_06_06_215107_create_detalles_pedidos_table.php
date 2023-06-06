@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('familia');
             $table->string('grupo');
             $table->string('subgrupo');
-            $table->string('id_producto');
+            $table->integer('id_producto');
             $table->string('descripcion');
             $table->string('iva');
             $table->string('total');
