@@ -27,6 +27,10 @@ Route::resource('usuarios', UsuariosController::class);
 // Ruta para autenticación
 Route::post('login', [UsuariosController::class, 'login']);
 
+// Ruta para encontrarPorEmail
+Route::get('usuario/correo/{email}', [UsuariosController::class, 'encontrarPorEmail']);
+
+
 Route::resource('pedidos', PedidosController::class);
 
 Route::resource('detallesPedidos', DetallesPedidosController::class);

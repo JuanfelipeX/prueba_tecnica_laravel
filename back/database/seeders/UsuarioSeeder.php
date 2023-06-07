@@ -13,14 +13,23 @@ class UsuarioSeeder extends Seeder
      */
     public function run(): void
     {
-        usuarios::firstOrCreate(
-            ['email' => 'adm@gmail.com'],
-            [
-                'usuario' => '1',
-                'contrasena' => '1234',
-                'rol_usuario' => 'tipo',
-                'activo' => 'activo',
-            ]
-        );
+        // usuarios::firstOrCreate(
+        //     ['email' => 'adm@gmail.com'],
+        //     [
+        //         'usuario' => '1',
+        //         'contrasena' => '1234',
+        //         'rol_usuario' => 'tipo',
+        //         'activo' => 'activo',
+        //     ]
+        // );
+
+        $new = new usuarios();
+        $new->email = "adm@gmail.com";
+        $new->usuario = "adm";
+        $new->contrasena = "1234";
+        $new->rol_usuario = "rol usuario";
+        $new->activo = "activo";
+        $new->save();
+
     }
 }
