@@ -15,10 +15,10 @@ class UsuarioSeeder extends Seeder
     {
         $new = new usuarios();
         $new->usuario = "1";
-        $new->contrasena = "razon social";
+        $new->contrasena = "1234";
         $new->rol_usuario = "tipo";
         $new->activo = "activo";
-        $new->email = "email";
+        $new->email = "adm@gmail.com";
         $new->save();
     }
 }

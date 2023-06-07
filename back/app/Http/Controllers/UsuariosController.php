@@ -74,4 +74,21 @@ class UsuariosController extends Controller
     {
         //
     }
+
+    public function encontrarPorEmail($email)
+    {
+        $data = usuarios::where('email', $email)->first();
+
+        if ($data) {
+            return response()->json([
+                'type' => 'Usuario Encontrado',
+                'Usuario' => $data,
+            ]);
+        } else {
+            return response()->json([
+                'type' => 'Usuario no encontrado',
+                'email' => $email,
+            ]);
+        }
+    }
 }
