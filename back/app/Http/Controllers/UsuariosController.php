@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\usuarios;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+
 
 class UsuariosController extends Controller
 {
@@ -75,20 +77,21 @@ class UsuariosController extends Controller
         //
     }
 
-    public function encontrarPorEmail($email)
+    public function login(Request $request)
     {
-        $data = usuarios::where('email', $email)->first();
+        $credentials = $request->only('email', 'password');
 
-        if ($data) {
+        if (Auth::attempt($credentials, true, 'usuarios')) {
+            // El usuario ha sido autenticado
             return response()->json([
-                'type' => 'Usuario Encontrado',
-                'Usuario' => $data,
+                'type' => 'Autenticación exitosa',
+                'user' => Auth::user(),
             ]);
         } else {
+            // Las credenciales son inválidas
             return response()->json([
-                'type' => 'Usuario no encontrado',
-                'email' => $email,
-            ]);
+                'type' => 'Credenciales inválidas',
+            ], 401);
         }
     }
 }
