@@ -9,6 +9,6 @@ class pedidos extends Model
 {
     use HasFactory;
 
-protected $fillable = ['fecha_pedido', /* other fillable fields */];
+protected $fillable = ['fecha_pedido', 'prefijo', 'num_pedido', 'nit', 'razon_social', 'vendedor', 'departamento', 'ciudad' ];
 
 }
