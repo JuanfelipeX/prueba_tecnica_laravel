@@ -8,4 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class pedidos extends Model
 {
     use HasFactory;
+
+protected $fillable = ['fecha_pedido', /* other fillable fields */];
+
 }

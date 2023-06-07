@@ -23,8 +23,9 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::resource('usuarios', UsuariosController::class);
-Route::get('usuario/correo/{email}', [UsuariosController::class, 'encontrarPorEmail']);
 
+// Ruta para autenticación
+Route::post('login', [UsuariosController::class, 'login']);
 
 Route::resource('pedidos', PedidosController::class);
 
